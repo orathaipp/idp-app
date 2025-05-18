@@ -1,14 +1,14 @@
 apiVersion: argoproj.io/v1alpha1 
 kind: Application
 metadata:
-  name: cart
+  name: payment-app
   namespace: argocd
 spec:
-  project: default
+  project: payment
   source:
     repoURL: git@github.com:orathaipp/nonprod-k8s-manifests.git
     targetRevision: main
-    path: dev/pedjeab/cart
+    path: dev/pedjeab/payment
   destination:
     server: https://kubernetes.default.svc
     namespace: dev-pedjeab-cart
