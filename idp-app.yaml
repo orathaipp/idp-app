@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: git@github.com:orathaipp/idb-app.git
+    repoURL: git@github.com:orathaipp/idp-app.git
     targetRevision: main
     path: platform
   destination:
