@@ -7,6 +7,17 @@ metadata:
     - resources-finalizer.argocd.argoproj.io  
 spec:
   description: Infrastructure resources
+  roles:
+  - description: Read Only
+    name: read-only
+    policies:
+    - p, proj:infra:read-only, applications, get, infra/*, allow
+  - description: Read Write
+    name: read-write
+    policies:
+    - p, proj:infra:read-write, applications, get, infra/*, allow
+    - p, proj:infra:read-write, applications, sync, infra/*, allow
+    - p, proj:infra:read-write, applications, update, infra/*, allow
   clusterResourceWhitelist:
   - group: ""
     kind: Namespace

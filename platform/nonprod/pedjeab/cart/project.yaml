@@ -7,9 +7,22 @@ metadata:
     - resources-finalizer.argocd.argoproj.io  
 spec:
   description: Infrastructure resources
+  roles:
+    - name: read-write
+      description: Full access (for nongkai)
+      policies:
+        - p, proj:cart:read-write, applications, get, cart/*, allow
+        - p, proj:cart:read-write, applications, create, cart/*, allow
+        - p, proj:cart:read-write, applications, update, cart/*, allow
+        - p, proj:cart:read-write, applications, delete, cart/*, allow
+        - p, proj:cart:read-write, applications, sync, cart/*, allow
+    - name: read-only
+      description: Read-only access (for nongped)
+      policies:
+        - p, proj:cart:read-only, applications, get, cart/*, allow
   clusterResourceWhitelist:
-  - group: ""
-    kind: Namespace
+    - group: ""
+      kind: Namespace
   destinations:
   - name: '*'
     namespace: '*'
