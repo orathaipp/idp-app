@@ -26,4 +26,4 @@ spec:
     namespace: '*'
     server: '*'  
   sourceRepos:
-  - git@github.com:orathaipp/nonprod-k8s-manifests.git
+  - https://github.com/orathaipp/nonprod-k8s-manifests.git
