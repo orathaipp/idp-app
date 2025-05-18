@@ -29,4 +29,3 @@ spec:
       server: '*'  
   sourceRepos:
     - https://github.com/orathaipp/nonprod-k8s-manifests.git
-    - git@github.com:orathaipp/nonprod-k8s-manifests.git
