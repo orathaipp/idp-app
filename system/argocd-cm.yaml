@@ -13,3 +13,15 @@ data:
   accounts.mookata: apiKey, login
   # disables user. User is enabled by default
   accounts.mookata.enabled: "true"
+  url: http://jojo.saritrat
+
+  dex.config: |
+    connectors:
+      - type: github
+        id: github
+        name: GitHub
+        config:
+          clientID: <clientID>
+          clientSecret: <clientSecret>
+          orgs:
+          - name: sikiryl
