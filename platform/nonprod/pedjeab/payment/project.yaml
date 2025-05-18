@@ -4,26 +4,27 @@ metadata:
   name: payment
   namespace: argocd
   finalizers:
-    - resources-finalizer.argocd.argoproj.io  
+    - resources-finalizer.argocd.argoproj.io
 spec:
-  description: Infrastructure resources
+  description: Infrastructure resources for payment apps
   roles:
-    - description: Read Only
-      name: read-only
+    - name: read-only
+      description: Read Only Access
       policies:
-      - p, proj:payment:read-only, applications, get, payment/*, allow
-    - description: Read Write
-      name: read-write
+        - p, proj:payment:read-only, applications, get, *, allow
+    - name: read-write
+      description: Read Write Access
       policies:
-        - p, proj:payment:read-write, applications, get, payment/*, allow
-        - p, proj:payment:read-write, applications, sync, payment/*, allow
-        - p, proj:payment:read-write, applications, update, payment/*, allow
+        - p, proj:payment:read-write, applications, get, *, allow
+        - p, proj:payment:read-write, applications, sync, *, allow
+        - p, proj:payment:read-write, applications, update, *, allow
   clusterResourceWhitelist:
     - group: ""
       kind: Namespace
   destinations:
     - name: '*'
       namespace: '*'
-      server: '*'  
+      server: '*'
   sourceRepos:
     - https://github.com/orathaipp/nonprod-k8s-manifests.git
+    - git@github.com:orathaipp/nonprod-k8s-manifests.git

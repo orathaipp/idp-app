@@ -11,15 +11,15 @@ spec:
     - name: read-write
       description: Full access (for nongkai)
       policies:
-        - p, proj:cart:read-write, applications, get, cart/*, allow
-        - p, proj:cart:read-write, applications, create, cart/*, allow
-        - p, proj:cart:read-write, applications, update, cart/*, allow
-        - p, proj:cart:read-write, applications, delete, cart/*, allow
-        - p, proj:cart:read-write, applications, sync, cart/*, allow
+        - p, proj:cart:read-write, applications, get, *, allow
+        - p, proj:cart:read-write, applications, create, *, allow
+        - p, proj:cart:read-write, applications, update, *, allow
+        - p, proj:cart:read-write, applications, delete, *, allow
+        - p, proj:cart:read-write, applications, sync, *, allow
     - name: read-only
       description: Read-only access (for nongped)
       policies:
-        - p, proj:cart:read-only, applications, get, cart/*, allow
+        - p, proj:cart:read-only, applications, get, *, allow
   clusterResourceWhitelist:
     - group: ""
       kind: Namespace
@@ -29,3 +29,4 @@ spec:
       server: '*'  
   sourceRepos:
     - https://github.com/orathaipp/nonprod-k8s-manifests.git
+    - git@github.com:orathaipp/nonprod-k8s-manifests.git
