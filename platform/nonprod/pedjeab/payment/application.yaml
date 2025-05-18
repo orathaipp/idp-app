@@ -6,7 +6,7 @@ metadata:
 spec:
   project: payment
   source:
-    repoURL: git@github.com:orathaipp/nonprod-k8s-manifests.git
+    repoURL: https://github.com/orathaipp/nonprod-k8s-manifests.git
     targetRevision: main
     path: dev/pedjeab/payment
   destination:
